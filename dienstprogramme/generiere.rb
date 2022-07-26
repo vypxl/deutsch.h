@@ -91,5 +91,8 @@ def write_c_headers(headers, path)
     end
 end
 
-headers = read_headers "."
-write_c_headers headers, "deutsch"
+definitions_path = ARGV[0].nil? ? "." : ARGV[0]
+out_path = ARGV[1].nil? ? "deutsch" : ARGV[1]
+
+headers = read_headers definitions_path
+write_c_headers headers, out_path
