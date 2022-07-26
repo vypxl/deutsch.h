@@ -20,8 +20,8 @@ jobs:
 
     - name: Run CMake
       run: cmake ..
-        working-directory: build
+      working-directory: build
     
     - name: Run Make
       run: make
-        working-directory: build
+      working-directory: build
