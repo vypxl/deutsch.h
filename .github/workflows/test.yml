@@ -1,0 +1,27 @@
+name: Generate and Test
+
+on:
+  push:
+    branches: ["Meister"]
+  pull_request:
+    branches: ["Meister"]
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Generate
+      run: ruby dienstprogramme/generiere.rb
+
+    
+    - run: mkdir build
+
+    - name: Run CMake
+      run: cmake ..
+      working-directory: build
+    
+    - name: Run Make
+      run: make
+      working-directory: build
