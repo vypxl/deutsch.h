@@ -14,11 +14,14 @@ jobs:
 
     - name: Generate
       run: ruby dienstprogramme/generiere.rb
+
     
-    - run: mkdir build && cd build
+    - run: mkdir build
 
     - name: Run CMake
-      run: "cmake .."
+      run: cmake ..
+        working-directory: build
     
     - name: Run Make
       run: make
+        working-directory: build
