@@ -1,0 +1,4 @@
+name: stdbib
+cbibliothek: stdlib
+umbenennungen:
+  zufall: rand
